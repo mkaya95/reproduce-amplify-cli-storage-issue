@@ -1,0 +1,93 @@
+{
+  "auth": {
+    "reproduceamplifyclisdcb08624": {
+      "customAuth": false,
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    }
+  },
+  "function": {
+    "photoTrigger": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "videoTrigger": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_photoTrigger_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "photoTrigger"
+        }
+      ]
+    },
+    "AMPLIFY_function_photoTrigger_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "photoTrigger"
+        }
+      ]
+    },
+    "AMPLIFY_function_videoTrigger_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "videoTrigger"
+        }
+      ]
+    },
+    "AMPLIFY_function_videoTrigger_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "videoTrigger"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "mystorage": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "LambdaExecutionRole"
+          ],
+          "category": "function",
+          "resourceName": "videoTrigger"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "S3"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "resourceName": "mystorage",
+  "policyUUID": "839b7bf7",
+  "bucketName": "my-storage",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "CREATE_AND_UPDATE",
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "groupAccess": {},
+  "triggerFunction": "videoTrigger"
+}
