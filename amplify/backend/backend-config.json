@@ -50,6 +50,15 @@
           ],
           "category": "function",
           "resourceName": "videoTrigger"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "LambdaExecutionRole"
+          ],
+          "category": "function",
+          "resourceName": "photoTrigger"
         }
       ],
       "providerPlugin": "awscloudformation",
