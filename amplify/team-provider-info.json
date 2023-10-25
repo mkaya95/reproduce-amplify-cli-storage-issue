@@ -1,32 +1,23 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-reproduceamplifyclis-dev-121156-authRole",
-      "UnauthRoleArn": "arn:aws:iam::857496123230:role/amplify-reproduceamplifyclis-dev-121156-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::857496123230:role/amplify-reproduceamplifyclis-dev-121156-authRole",
+      "AuthRoleName": "amplify-reproduceamplifyclis-dev-125155-authRole",
+      "UnauthRoleArn": "arn:aws:iam::857496123230:role/amplify-reproduceamplifyclis-dev-125155-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::857496123230:role/amplify-reproduceamplifyclis-dev-125155-authRole",
       "Region": "eu-central-1",
-      "DeploymentBucketName": "amplify-reproduceamplifyclis-dev-121156-deployment",
-      "UnauthRoleName": "amplify-reproduceamplifyclis-dev-121156-unauthRole",
-      "StackName": "amplify-reproduceamplifyclis-dev-121156",
-      "StackId": "arn:aws:cloudformation:eu-central-1:857496123230:stack/amplify-reproduceamplifyclis-dev-121156/ee4841b0-731e-11ee-95ee-0a1829d6f4fd",
-      "AmplifyAppId": "dlq28cjyvy9pg"
+      "DeploymentBucketName": "amplify-reproduceamplifyclis-dev-125155-deployment",
+      "UnauthRoleName": "amplify-reproduceamplifyclis-dev-125155-unauthRole",
+      "StackName": "amplify-reproduceamplifyclis-dev-125155",
+      "StackId": "arn:aws:cloudformation:eu-central-1:857496123230:stack/amplify-reproduceamplifyclis-dev-125155/8427c5c0-7324-11ee-8d6e-063ede7deb1e",
+      "AmplifyAppId": "doghdjln6boov"
     },
     "categories": {
       "auth": {
         "reproduceamplifyclisdcb08624": {}
       },
       "function": {
-        "videoTrigger": {
-          "deploymentBucketName": "amplify-reproduceamplifyclis-dev-121156-deployment",
-          "s3Key": "amplify-builds/videoTrigger-6d764f47754b73776b77-build.zip"
-        },
-        "photoTrigger": {
-          "deploymentBucketName": "amplify-reproduceamplifyclis-dev-121156-deployment",
-          "s3Key": "amplify-builds/photoTrigger-655249362b5a2b50716d-build.zip"
-        }
-      },
-      "storage": {
-        "mystorage": {}
+        "photoTrigger": {},
+        "videoTrigger": {}
       }
     }
   }

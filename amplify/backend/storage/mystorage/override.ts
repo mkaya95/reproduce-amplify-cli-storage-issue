@@ -26,14 +26,10 @@ export function override(
         envRef,
     ]);
 
-    const objectsArnJoin = Fn.join("", [
-        "arn:aws:s3:::",
-        bucketNameRef,
-        fourthElement,
-        "-",
-        envRef,
-        "/*",
-    ]);
+    resources.addCfnParameter({},'functionphotoTriggerName');
+    resources.addCfnParameter({},'functionphotoTriggerArn');
+    resources.addCfnParameter({},'functionphotoTriggerLambdaExecutionRole');
+
 
     const cfnPermission = new lambda.CfnPermission(
         // ignore stack type error
@@ -42,7 +38,7 @@ export function override(
         "PhotoTriggerLambdaTriggerPermission",
         {
             action: "lambda:InvokeFunction",
-            functionName: `photoTrigger-${envRef}`,
+            functionName: Fn.ref("functionphotoTriggerName"),
             principal: "s3.amazonaws.com",
             sourceAccount: stack.account,
             sourceArn: finalJoin,
@@ -56,7 +52,7 @@ export function override(
         lambdaConfigurations: [
             {
                 event: "s3:ObjectCreated:*",
-                function: `arn:aws:lambda:${stack.region}:${stack.account}:function:videoTrigger-${envRef}`,
+                function: Fn.ref("functionvideoTriggerArn"),
                 filter: {
                     s3Key: {
                         rules: [
@@ -70,7 +66,7 @@ export function override(
             },
             {
                 event: "s3:ObjectCreated:*",
-                function: `arn:aws:lambda:${stack.region}:${stack.account}:function:photoTrigger-${envRef}`,
+                function: Fn.ref("functionphotoTriggerArn"),
                 filter: {
                     s3Key: {
                         rules: [
